@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VoidCart | Privacy Protocol – Your Data, Our Vow</title>
+    <!-- Google Fonts: consistent with unique brand identity -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #101214;
+            line-height: 1.55;
+        }
+
+        /* Brand color palette — same unique identity */
+        :root {
+            --primary-dark: #0a0c1a;
+            --primary-teal: #1ad2c6;
+            --primary-deep: #1f2b5c;
+            --accent-glow: #ff6ac3;
+            --bg-soft: #f5f7ff;
+            --card-bg: #ffffff;
+            --gray-muted: #6c6f78;
+        }
+
+        h1, h2, h3, .logo, .nav-links a, .btn {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ========= HEADER (consistent across all pages) ========= */
+        header {
+            background: rgba(10, 12, 26, 0.96);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 210, 198, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #1ad2c6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.03em;
+        }
+        .logo span {
+            background: none;
+            color: #ff6ac3;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #eef2ff;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #1ad2c6;
+        }
+
+        .cart-icon {
+            background: #1f2b5c;
+            padding: 8px 14px;
+            border-radius: 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: white;
+        }
+
+        /* ========= PRIVACY HERO ========= */
+        .privacy-hero {
+            background: linear-gradient(125deg, #0a0c1a 0%, #121a2e 100%);
+            padding: 60px 0 50px;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            margin-bottom: 50px;
+        }
+        .privacy-title {
+            text-align: center;
+            color: white;
+        }
+        .privacy-title h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        .privacy-title p {
+            color: #cbd5ff;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+        .privacy-badge {
+            background: rgba(26, 210, 198, 0.15);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            color: #1ad2c6;
+        }
+
+        /* ===== PRIVACY CONTENT CARD ===== */
+        .privacy-card {
+            background: white;
+            border-radius: 40px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            padding: 48px 52px;
+            margin-bottom: 70px;
+            border: 1px solid #edf2f7;
+        }
+        .privacy-section {
+            margin-bottom: 42px;
+        }
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0a0c1a;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .privacy-section h2 i {
+            color: #1ad2c6;
+            font-size: 1.6rem;
+        }
+        .privacy-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: #1f2b5c;
+        }
+        .privacy-section p {
+            margin-bottom: 16px;
+            color: #2d3748;
+            line-height: 1.65;
+        }
+        .privacy-section ul, .privacy-section ol {
+            margin: 16px 0 16px 28px;
+            color: #2d3748;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: #f0f3fe;
+            border-left: 5px solid #1ad2c6;
+            padding: 20px 24px;
+            border-radius: 24px;
+            margin: 28px 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        hr {
+            margin: 32px 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #e2e8f0, #1ad2c680, #e2e8f0);
+        }
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a0c1a;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .back-home:hover {
+            background: #1ad2c6;
+            color: #0a0c1a;
+        }
+        /* footer */
+        footer {
+            background: #0b0e1a;
+            color: #bbb;
+            padding: 48px 0 32px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .footer-col p, .footer-col a {
+            color: #9ba3cf;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .socials i {
+            font-size: 1.6rem;
+            margin-right: 16px;
+            color: #1ad2c6;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #1f2542;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .privacy-card { padding: 28px 24px; }
+            .privacy-title h1 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .privacy-section h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">VOID<span>CART</span> ⚡</div>
+            <ul class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="privacy-hero">
+        <div class="container privacy-title">
+            <h1>🔒 Privacy Protocol</h1>
+            <p>Your trust is our gravity. We collect only what's needed, protect with encryption, and never sell your data.</p>
+            <div class="privacy-badge"><i class="fas fa-shield-alt"></i> Effective: June 12, 2026 | VoidCart v2.3 – Data Guardian Certified</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="privacy-card">
+            <!-- Introduction / Our Commitment -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-hand-peace"></i> 1. Our Privacy Vow</h2>
+                <p>Welcome to VoidCart (“we,” “us,” “our”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website voidcart.space, make a purchase, or interact with our cosmic commerce platform. We respect your privacy and are committed to protecting your personal data in compliance with GDPR, CCPA, and other applicable regulations.</p>
+                <div class="highlight-box">
+                    <p><i class="fas fa-star-of-life" style="color:#1ad2c6;"></i> <strong>Zero data exploitation.</strong> VoidCart never sells, rents, or trades your personal information to third parties for marketing purposes. Transparency is our north star.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Information We Collect -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+                <p>We collect information that identifies, relates to, or describes you (“personal information”). Categories include:</p>
+                <ul>
+                    <li><strong>Identity Data:</strong> Name, username, email address, phone number, and postal address.</li>
+                    <li><strong>Transaction Data:</strong> Products purchased, payment method details (processed by secure third-party gateways), billing address, order history.</li>
+                    <li><strong>Technical Data:</strong> IP address, browser type, device identifiers, operating system, and browsing actions on our site (via cookies and similar technologies).</li>
+                    <li><strong>Profile Data:</strong> Your preferences, wishlist items, product reviews, and communication preferences.</li>
+                    <li><strong>Usage Data:</strong> How you navigate VoidCart, pages visited, time spent, and referral sources.</li>
+                </ul>
+                <p>We do not intentionally collect sensitive data (e.g., racial origin, political opinions, health information). If you provide such information voluntarily in reviews, it becomes public.</p>
+            </div>
+
+            <hr>
+
+            <!-- How We Collect -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-satellite-dish"></i> 3. How We Gather Your Data</h2>
+                <p>We use different methods to collect data from and about you:</p>
+                <ul>
+                    <li><strong>Direct interactions:</strong> When you create an account, place an order, subscribe to our newsletter, participate in giveaways, or contact support.</li>
+                    <li><strong>Automated technologies:</strong> As you browse, we automatically collect Technical and Usage Data via cookies, log files, and analytics providers (e.g., privacy-friendly analytics).</li>
+                    <li><strong>Third-party sources:</strong> Payment processors (Stripe, PayPal) share transaction confirmation but do not give us full payment card details. Social media logins (if used) provide basic profile info with your consent.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><i class="fas fa-cookie-bite"></i> <strong>Cookie Control:</strong> You can manage cookie preferences via your browser settings. However, disabling essential cookies may impact site functionality (e.g., cart persistence).</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Why We Process & Legal Basis -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-chart-line"></i> 4. How We Use Your Information</h2>
+                <p>VoidCart processes personal data for the following legitimate purposes:</p>
+                <ul>
+                    <li>To process and fulfill orders, including shipping confirmations, returns, and customer support.</li>
+                    <li>To manage your account, wishlist, and loyalty rewards.</li>
+                    <li>To communicate transactional updates (order status, policy changes, security alerts).</li>
+                    <li>To improve our website, personalize recommendations, and prevent fraud.</li>
+                    <li>To send marketing communications only if you have opted in (you may unsubscribe anytime).</li>
+                </ul>
+                <p><strong>Legal basis (GDPR):</strong> Contractual necessity (order fulfillment), legitimate interests (security & improvements), and consent (marketing emails).</p>
+            </div>
+
+            <hr>
+
+            <!-- Sharing & Disclosure -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-share-alt"></i> 5. When We Share Your Data</h2>
+                <p>We never sell your personal information. However, we may share data with limited categories of service providers to operate our business:</p>
+                <ul>
+                    <li><strong>Shipping carriers:</strong> FedEx, DHL, USPS for delivery of physical products.</li>
+                    <li><strong>Payment processors:</strong> Stripe, PayPal, or cryptocurrency gateways (they handle sensitive payment data independently).</li>
+                    <li><strong>Analytics & security:</strong> Privacy-respecting tools to detect fraud and analyze site performance.</li>
+                    <li><strong>Legal compliance:</strong> If required by law, court order, or to enforce our Terms of Service.</li>
+                </ul>
+                <p>All third-party processors are contractually obligated to protect your data and use it solely for specified services.</p>
+            </div>
+
+            <hr>
+
+            <!-- Data Security & Retention -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-lock"></i> 6. Data Security & Retention</h2>
+                <p>We implement industry-standard security measures, including SSL encryption, firewalls, access controls, and regular vulnerability scans. However, no internet transmission is 100% secure. While we strive to protect your data, you acknowledge inherent risks.</p>
+                <p><strong>Retention policy:</strong> We retain personal data only as long as necessary to fulfill the purposes outlined in this policy (e.g., order records for tax purposes: 7 years). Account information is kept until you request deletion. After that, anonymized analytics may be retained.</p>
+            </div>
+
+            <hr>
+
+            <!-- Your Privacy Rights (GDPR/CCPA) -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-user-check"></i> 7. Your Rights & Choices</h2>
+                <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of the data we hold about you.</li>
+                    <li><strong>Correction:</strong> Update inaccurate or incomplete information.</li>
+                    <li><strong>Deletion:</strong> Request erasure of your personal data (subject to legal obligations).</li>
+                    <li><strong>Opt-out of marketing:</strong> Click “unsubscribe” in any email or adjust account settings.</li>
+                    <li><strong>Data portability:</strong> Receive a machine-readable copy of your data.</li>
+                    <li><strong>Restrict processing:</strong> Limit how we use your data in certain situations.</li>
+                </ul>
+                <p>To exercise your rights, contact us at <strong>privacy@voidcart.space</strong>. We will respond within 30 days. We never discriminate against users who exercise their privacy rights.</p>
+                <div class="highlight-box">
+                    <p><i class="fab fa-cc-visa"></i> <strong>California residents (CCPA):</strong> You have the right to know what personal information is collected, request deletion, and opt-out of “sales” (we do not sell data). For verifiable consumer requests, email privacy@voidcart.space.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Children's Privacy -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-child"></i> 8. Children's Privacy</h2>
+                <p>VoidCart does not knowingly collect personal information from children under 13 years of age (or under 16 in certain jurisdictions). If we learn we have inadvertently collected such data, we will delete it promptly. Parents or guardians who believe their child has provided us with personal information should contact us.</p>
+            </div>
+
+            <hr>
+
+            <!-- International Data Transfers -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-globe"></i> 9. International Transfers</h2>
+                <p>VoidCart operates from the United States. If you access our site from outside the US, please note your data may be transferred to, stored, and processed in the US, where data protection laws may differ. By using our Service, you consent to such transfers. We take steps to ensure adequate safeguards (e.g., Standard Contractual Clauses) for EU/UK users.</p>
+            </div>
+
+            <hr>
+
+            <!-- Cookies & Tracking -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-chart-simple"></i> 10. Cookies & Similar Tech</h2>
+                <p>We use cookies to enhance user experience, analyze trends, and remember cart items. Types include:</p>
+                <ul>
+                    <li><strong>Essential cookies:</strong> Enable navigation and checkout (cannot be disabled).</li>
+                    <li><strong>Preference cookies:</strong> Remember language and region.</li>
+                    <li><strong>Analytics cookies:</strong> Anonymous traffic data via first-party analytics.</li>
+                </ul>
+                <p>You can manage cookies via browser settings. Disabling non-essential cookies will not affect basic store functionality.</p>
+            </div>
+
+            <hr>
+
+            <!-- Updates to Policy -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-history"></i> 11. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. The revised version will be indicated by an updated “Effective Date” and notified via website notice or email for material changes. Your continued use of VoidCart after changes signifies acceptance.</p>
+            </div>
+
+            <hr>
+
+            <!-- Contact Information -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-envelope-open-text"></i> 12. Contact Our Data Guardian</h2>
+                <p>If you have questions, concerns, or wish to submit a privacy request, please reach out:</p>
+                <p><i class="fas fa-shield-haltered"></i> <strong>Data Protection Officer:</strong> privacy@voidcart.space<br>
+                <i class="fas fa-map-pin"></i> VoidCart Privacy Office, 221B Nebula Avenue, Wilmington, DE 19801, USA<br>
+                <i class="fas fa-phone-alt"></i> +1 (800) 669-4321 (Ask for Privacy Team)</p>
+                <p>For urgent data breach notifications or regulatory inquiries, we respond within 72 hours.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#" class="back-home" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Back to VoidCart Universe</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>VOIDCART</h4>
+                <p>Hyperdimensional ecommerce</p>
+                <div class="socials">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-discord"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                
+        </div>
+        <div class="copyright">
+            © 2026 VoidCart — Privacy by Design. Your data, your sovereignty. <i class="fas fa-shield-virus"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Cart placeholder interaction (consistent with overall brand)
+    const cartSpan = document.querySelector('.cart-icon span');
+    if(cartSpan) {
+        let cartCount = 0;
+        cartSpan.innerText = cartCount;
+        const cartIconDiv = document.querySelector('.cart-icon');
+        if(cartIconDiv) {
+            cartIconDiv.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("🛸 Your VoidCart journey awaits — add products from our homepage!");
+            });
+        }
+    }
+
+    // Smooth back to home redirection (demo purpose)
+    const backBtn = document.getElementById('backToHomeBtn');
+    if(backBtn) {
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Create a floating message & redirect to the root (homepage assumed to be index)
+            const toast = document.createElement('div');
+            toast.innerText = "🔮 Returning to VoidCart Home... secure connection established.";
+            toast.style.position = 'fixed';
+            toast.style.bottom = '30px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = '#1ad2c6';
+            toast.style.color = '#0a0c1a';
+            toast.style.padding = '12px 28px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = 'bold';
+            toast.style.fontFamily = "'Space Grotesk', monospace";
+            toast.style.zIndex = '1000';
+            toast.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+                window.location.href = "."; // Redirect to homepage (index)
+            }, 1300);
+        });
+    }
+
+    // Add subtle hover effect for privacy sections to enhance readability
+    const sections = document.querySelectorAll('.privacy-section h2');
+    sections.forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            section.style.transition = '0.2s';
+            section.style.color = '#1ad2c6';
+        });
+        section.addEventListener('mouseleave', () => {
+            section.style.color = '#0a0c1a';
+        });
+    });
+</script>
+</body>
+</html>

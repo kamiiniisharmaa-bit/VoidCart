@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VoidCart | Futuristic Emporium</title>
+    <!-- Google Fonts: unique blend of modern & geometric -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #101214;
+            scroll-behavior: smooth;
+        }
+
+        /* Unique color palette: deep indigo + electric teal + warm accents */
+        :root {
+            --primary-dark: #0a0c1a;
+            --primary-teal: #1ad2c6;
+            --primary-deep: #1f2b5c;
+            --accent-glow: #ff6ac3;
+            --bg-soft: #f5f7ff;
+            --card-bg: #ffffff;
+            --gray-muted: #6c6f78;
+        }
+
+        /* Typography unique twist */
+        h1, h2, h3, .logo, .nav-links a, .btn {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ========= HEADER ========= */
+        header {
+            background: rgba(10, 12, 26, 0.96);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 210, 198, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #1ad2c6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.03em;
+        }
+        .logo span {
+            background: none;
+            color: #ff6ac3;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #eef2ff;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #1ad2c6;
+        }
+
+        .cart-icon {
+            background: #1f2b5c;
+            padding: 8px 14px;
+            border-radius: 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: white;
+        }
+        .cart-icon i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(125deg, #0a0c1a 0%, #12162c 100%);
+            padding: 80px 0 90px;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            margin-bottom: 40px;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: rgba(26, 210, 198, 0.2);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            color: #1ad2c6;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(2px);
+        }
+        .hero-content h1 {
+            font-size: 3.6rem;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            color: #cbd5ff;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+        .btn-primary {
+            background: #1ad2c6;
+            color: #0a0c1a;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: #ff6ac3;
+            color: #0a0c1a;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px -5px rgba(255, 106, 195, 0.4);
+        }
+        .hero-image {
+            flex: 0.9;
+            background: radial-gradient(circle at 30% 20%, rgba(26,210,198,0.15), transparent);
+            padding: 20px;
+            border-radius: 40px;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 32px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.5);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Featured section */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 56px 0 28px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #1ad2c6;
+            border-radius: 4px;
+        }
+
+        /* PRODUCT GRID - unique card design */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 32px;
+            margin: 40px 0 60px;
+        }
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eef2ff;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 36px -16px rgba(0, 0, 0, 0.15);
+            border-color: #1ad2c680;
+        }
+        .img-wrapper {
+            height: 260px;
+            overflow: hidden;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .img-wrapper img {
+            transform: scale(1.04);
+        }
+        .product-info {
+            padding: 22px 20px 24px;
+        }
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1ad2c6;
+            font-weight: 600;
+        }
+        .product-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 10px 0 8px;
+            font-family: 'Space Grotesk', monospace;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2b5c;
+            margin: 12px 0;
+        }
+        .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--gray-muted);
+        }
+        .add-to-cart {
+            background: #0a0c1a;
+            color: white;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 8px;
+        }
+        .add-to-cart:hover {
+            background: #1ad2c6;
+            color: #0a0c1a;
+        }
+
+        /* Testimonial / unique brand story */
+        .story-section {
+            background: #f0f3fe;
+            border-radius: 48px;
+            padding: 60px 40px;
+            margin: 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .story-img {
+            flex: 1;
+            text-align: center;
+        }
+        .story-img img {
+            max-width: 280px;
+            border-radius: 32px;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+        }
+        .story-text {
+            flex: 1.5;
+        }
+        .story-text h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .story-text p {
+            color: #2d3a5e;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* newsletter */
+        .newsletter {
+            background: #0a0c1a;
+            border-radius: 48px;
+            padding: 56px 40px;
+            text-align: center;
+            margin: 40px 0 70px;
+        }
+        .newsletter h3 {
+            color: white;
+            font-size: 1.8rem;
+        }
+        .newsletter p {
+            color: #a9b4e2;
+            margin: 12px 0 24px;
+        }
+        .news-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .news-form input {
+            padding: 14px 24px;
+            border-radius: 60px;
+            border: none;
+            width: 280px;
+            font-size: 1rem;
+        }
+        .news-form button {
+            background: #1ad2c6;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #0b0e1a;
+            color: #bbb;
+            padding: 48px 0 32px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .footer-col p, .footer-col a {
+            color: #9ba3cf;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .socials i {
+            font-size: 1.6rem;
+            margin-right: 16px;
+            color: #1ad2c6;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #1f2542;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .section-title { font-size: 1.8rem; }
+            .story-section { flex-direction: column; text-align: center; }
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">VOID<span>CART</span> ⚡</div>
+            <ul class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero section with unique product imagery -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-bolt"></i> Limited Quantum Drop</div>
+                <h1>Where reality meets <br> <span style="color:#1ad2c6;">hyper-commerce</span></h1>
+                <p>Exclusive futuristic goods & cosmic designs. Unleash unique style with VoidCart's signature collection.</p>
+                <a href="#" class="btn-primary">Explore Nebula Store <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <!-- unique hero image (generative AI friendly / high quality abstract product) -->
+                <img src="https://picsum.photos/id/26/500/500" alt="VoidCart signature product model" style="object-fit:cover;">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">✦ Stellar Picks ✦</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected with JavaScript - include unique images & unique product names -->
+        </div>
+    </div>
+
+    <!-- Brand Story with unique image -->
+    <div class="container">
+        <div class="story-section">
+            <div class="story-img">
+                <img src="https://picsum.photos/id/0/400/450" alt="VoidCart studio vibe">
+            </div>
+            <div class="story-text">
+                <h3><i class="fas fa-meteor"></i> The VoidCart Ethos</h3>
+                <p>Born from the desire to blend cyberpunk aesthetics with everyday essentials, VoidCart brings you limited-edition drops, AI-crafted accessories, and futuristic streetwear. Every piece tells a story of innovation.</p>
+                <p><strong>2,000+ collectors</strong> already trust our galactic marketplace. Join the movement today.</p>
+                <a href="#" class="btn-primary" style="background:#ff6ac3; color:#0a0c1a;">Discover our Lore <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter + final CTA -->
+    <div class="container">
+        <div class="newsletter">
+            <h3>🔮 Sign up for early access</h3>
+            <p>Get exclusive drops, secret discounts & cosmic updates — no spam, only vibes.</p>
+            <div class="news-form">
+                <input type="email" placeholder="Your interstellar email" id="newsEmail">
+                <button id="newsBtn">Subscribe →</button>
+            </div>
+            <p style="font-size:0.7rem; margin-top:18px;">✨ Join the VoidCart inner circle</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>VOIDCART</h4>
+                <p>Hyperdimensional ecommerce</p>
+                <div class="socials">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-discord"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                
+        </div>
+        <div class="copyright">
+            © 2026 VoidCart — Where uniqueness shapes reality. All warp drives reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Product array with unique names, unique high-res unsplash/picsum images that look like ecom products
+    const products = [
+        {
+            id: 1,
+            name: "Nebula Drift Jacket",
+            category: "Cyberwear",
+            price: 189.99,
+            image: "https://picsum.photos/id/20/400/500",   // coffee & laptop vibe but artistic
+            alt: "advanced techwear jacket"
+        },
+        {
+            id: 2,
+            name: "Photon Shift Sneakers",
+            category: "Footwear",
+            price: 149.00,
+            image: "https://picsum.photos/id/1/400/500",
+            alt: "futuristic sneakers"
+        },
+        {
+            id: 3,
+            name: "Quantum Halo Backpack",
+            category: "Accessories",
+            price: 99.95,
+            image: "https://picsum.photos/id/100/400/500",
+            alt: "levitating smart backpack"
+        },
+        {
+            id: 4,
+            name: "Eclipse AR Glasses",
+            category: "Tech",
+            price: 329.00,
+            image: "https://picsum.photos/id/26/400/500",
+            alt: "augmented reality shades"
+        },
+        {
+            id: 5,
+            name: "Cypher Ring (limited)",
+            category: "Jewelry",
+            price: 79.00,
+            image: "https://picsum.photos/id/29/400/500",
+            alt: "encrypted carbon ring"
+        },
+        {
+            id: 6,
+            name: "VoidMesh Cap",
+            category: "Headwear",
+            price: 45.00,
+            image: "https://picsum.photos/id/36/400/500",
+            alt: "smart fabric cap"
+        }
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+    let cartCount = 0;
+    const cartSpan = document.querySelector('.cart-icon span');
+
+    function updateCartUI() {
+        if(cartSpan) cartSpan.innerText = cartCount;
+        // simple subtle animation
+        const cartIconDiv = document.querySelector('.cart-icon');
+        if(cartIconDiv) {
+            cartIconDiv.style.transform = 'scale(1.05)';
+            setTimeout(() => { if(cartIconDiv) cartIconDiv.style.transform = ''; }, 200);
+        }
+    }
+
+    function renderProducts() {
+        if(!productGrid) return;
+        productGrid.innerHTML = '';
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="img-wrapper">
+                    <img src="${product.image}" alt="${product.alt || product.name}" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">${product.category}</div>
+                    <div class="product-title">${product.name}</div>
+                    <div class="price">$${product.price.toFixed(2)} <small>or 4 flex-pays</small></div>
+                    <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                        <i class="fas fa-cart-plus"></i> Add to Hovercraft
+                    </button>
+                </div>
+            `;
+            productGrid.appendChild(card);
+        });
+
+        // attach event listeners after rendering
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productName = btn.getAttribute('data-name');
+                cartCount++;
+                updateCartUI();
+                // Show mini toast message (unique subtle)
+                showFloatingMessage(`${productName} added to VoidCart`);
+            });
+        });
+    }
+
+    function showFloatingMessage(msg) {
+        // create temporary floating notification
+        const toast = document.createElement('div');
+        toast.innerText = `✨ ${msg} ✨`;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '24px';
+        toast.style.right = '24px';
+        toast.style.backgroundColor = '#1ad2c6';
+        toast.style.color = '#0a0c1a';
+        toast.style.padding = '12px 20px';
+        toast.style.borderRadius = '60px';
+        toast.style.fontWeight = '600';
+        toast.style.fontFamily = "'Space Grotesk', monospace";
+        toast.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+        toast.style.zIndex = '999';
+        toast.style.backdropFilter = 'blur(4px)';
+        toast.style.fontSize = '0.9rem';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 300);
+        }, 2200);
+    }
+
+    // Newsletter signup logic (simple unique greeting)
+    const newsBtn = document.getElementById('newsBtn');
+    const newsInput = document.getElementById('newsEmail');
+    if(newsBtn) {
+        newsBtn.addEventListener('click', () => {
+            const email = newsInput.value.trim();
+            if(email && email.includes('@') && email.includes('.')) {
+                showFloatingMessage(`Thanks ${email.split('@')[0]}! You're now a VoidCart Initiate.`);
+                newsInput.value = '';
+            } else {
+                showFloatingMessage("Enter a valid cosmic email address 🛸");
+            }
+        });
+    }
+
+    // Hero button + category placeholder smooth interactions
+    const heroBtn = document.querySelector('.hero .btn-primary');
+    if(heroBtn) {
+        heroBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showFloatingMessage("🌀 Drifting to the stellar collection...");
+            setTimeout(() => {
+                document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+        });
+    }
+
+    // Load products & reset cart count demo
+    renderProducts();
+    // initialize cart from 0
+    cartCount = 0;
+    updateCartUI();
+
+    // quick unique hover effect: product grid + neon vibe already in css
+    console.log("VoidCart — ecom site with unique identity & images loaded");
+</script>
+</body>
+</html>

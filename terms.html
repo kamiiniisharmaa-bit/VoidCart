@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VoidCart | Terms of Service – Cosmic Commerce Agreement</title>
+    <!-- Google Fonts: consistent with main site but refined -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #101214;
+            line-height: 1.55;
+        }
+
+        /* Reuse brand colors from homepage */
+        :root {
+            --primary-dark: #0a0c1a;
+            --primary-teal: #1ad2c6;
+            --primary-deep: #1f2b5c;
+            --accent-glow: #ff6ac3;
+            --bg-soft: #f5f7ff;
+            --card-bg: #ffffff;
+            --gray-muted: #6c6f78;
+        }
+
+        h1, h2, h3, .logo, .nav-links a, .btn {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ========= HEADER (consistent with homepage) ========= */
+        header {
+            background: rgba(10, 12, 26, 0.96);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 210, 198, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #1ad2c6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.03em;
+        }
+        .logo span {
+            background: none;
+            color: #ff6ac3;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #eef2ff;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #1ad2c6;
+        }
+
+        .cart-icon {
+            background: #1f2b5c;
+            padding: 8px 14px;
+            border-radius: 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: white;
+        }
+
+        /* ========= TERMS HERO ========= */
+        .terms-hero {
+            background: linear-gradient(105deg, #0a0c1a 0%, #12162c 100%);
+            padding: 60px 0 50px;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            margin-bottom: 50px;
+        }
+        .terms-title {
+            text-align: center;
+            color: white;
+        }
+        .terms-title h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        .terms-title p {
+            color: #b9c3ff;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+        .last-updated {
+            background: rgba(26, 210, 198, 0.15);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            color: #1ad2c6;
+        }
+
+        /* ===== TERMS CONTENT CARD ===== */
+        .terms-card {
+            background: white;
+            border-radius: 40px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            padding: 48px 52px;
+            margin-bottom: 70px;
+            border: 1px solid #edf2f7;
+        }
+        .terms-section {
+            margin-bottom: 42px;
+        }
+        .terms-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0a0c1a;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .terms-section h2 i {
+            color: #1ad2c6;
+            font-size: 1.6rem;
+        }
+        .terms-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: #1f2b5c;
+        }
+        .terms-section p {
+            margin-bottom: 16px;
+            color: #2d3748;
+            line-height: 1.65;
+        }
+        .terms-section ul, .terms-section ol {
+            margin: 16px 0 16px 28px;
+            color: #2d3748;
+        }
+        .terms-section li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: #f0f3fe;
+            border-left: 5px solid #1ad2c6;
+            padding: 20px 24px;
+            border-radius: 24px;
+            margin: 28px 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        hr {
+            margin: 32px 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #e2e8f0, #1ad2c680, #e2e8f0);
+        }
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a0c1a;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .back-home:hover {
+            background: #1ad2c6;
+            color: #0a0c1a;
+        }
+        /* footer */
+        footer {
+            background: #0b0e1a;
+            color: #bbb;
+            padding: 48px 0 32px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .footer-col p, .footer-col a {
+            color: #9ba3cf;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .socials i {
+            font-size: 1.6rem;
+            margin-right: 16px;
+            color: #1ad2c6;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #1f2542;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .terms-card { padding: 28px 24px; }
+            .terms-title h1 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .terms-section h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">VOID<span>CART</span> ⚡</div>
+            <ul class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="terms-hero">
+        <div class="container terms-title">
+            <h1>📜 Terms of Service</h1>
+            <p>Welcome to VoidCart — a hyperdimensional commerce experience. By accessing or using our platform, you agree to be bound by the following terms and conditions.</p>
+            <div class="last-updated"><i class="far fa-calendar-alt"></i> Last Updated: June 12, 2026 | Version 2.3 (Quantum Edition)</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="terms-card">
+            <!-- Introduction Section -->
+            <div class="terms-section">
+                <h2><i class="fas fa-globe-americas"></i> 1. Acceptance of Terms</h2>
+                <p>VoidCart ("Company", "we", "us", "our") operates the website voidcart.space (the "Service"). These Terms of Service (“Terms”) constitute a legally binding agreement between you and VoidCart regarding your use of the e-commerce platform, including any purchases, product reviews, and community features.</p>
+                <p>By accessing or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you disagree with any part, you must discontinue using our website immediately.</p>
+                <div class="highlight-box">
+                    <p><i class="fas fa-meteor" style="color:#1ad2c6; margin-right:8px;"></i> <strong>Intergalactic note:</strong> VoidCart reserves the right to update or modify these Terms at any time without prior notice. Changes become effective upon posting. Your continued use constitutes acceptance of the revised Terms.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Account Registration -->
+            <div class="terms-section">
+                <h2><i class="fas fa-user-astronaut"></i> 2. Account & Registration</h2>
+                <p>To access certain features (purchases, wishlists, loyalty rewards), you may be required to create an account. You agree to provide accurate, current, and complete information during registration and to update it promptly. You are solely responsible for safeguarding your login credentials and for any activities under your account.</p>
+                <p>VoidCart reserves the right to suspend or terminate accounts that violate our policies, contain fraudulent information, or engage in malicious behavior. You must be at least 18 years old or have parental/guardian consent to make purchases.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color:#1ad2c6;"></i> You agree not to share your account with third parties.</li>
+                    <li><i class="fas fa-check-circle" style="color:#1ad2c6;"></i> You are liable for any unauthorized use of your account due to negligence.</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <!-- Products & Orders Section with unique ecom rules -->
+            <div class="terms-section">
+                <h2><i class="fas fa-shopping-bag"></i> 3. Products, Pricing & Orders</h2>
+                <p>All products listed on VoidCart – including limited-edition "Nebula Drift Jacket", "Photon Shift Sneakers", and other digital/physical goods – are subject to availability. We strive to display accurate imagery, specifications, and pricing. However, errors may occur. VoidCart reserves the right to correct any inaccuracies, change prices, or cancel orders affected by pricing errors, even after order confirmation.</p>
+                <h3>3.1 Order Acceptance</h3>
+                <p>After placing an order, you will receive an acknowledgement email. This does not guarantee acceptance. We reserve the right to refuse or cancel any order for reasons including but not limited to stock limitations, payment discrepancies, or suspected fraud.</p>
+                <h3>3.2 Pricing & Taxes</h3>
+                <p>All prices are listed in USD and do not include applicable taxes, shipping fees, or import duties unless explicitly stated. Such additional charges are your responsibility and will be reflected at checkout.</p>
+                <div class="highlight-box">
+                    <p><strong>⚡ VoidCart Promise:</strong> Limited drops are final sale unless damaged. For standard items, we offer a 14-day return window. See our Return Policy for details.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Payments & Billing -->
+            <div class="terms-section">
+                <h2><i class="fas fa-credit-card"></i> 4. Payment & Billing</h2>
+                <p>We accept major credit cards, digital wallets, and cryptocurrency via third-party processors. By providing payment information, you represent and warrant that you are authorized to use the designated payment method. You agree to pay all charges incurred under your account, including any applicable taxes.</p>
+                <p>If your payment fails, VoidCart may attempt to reprocess or suspend your order until resolution. Fraudulent or unauthorized transactions will be reported to the relevant authorities.</p>
+            </div>
+
+            <hr>
+
+            <!-- Shipping & Delivery (unique clause) -->
+            <div class="terms-section">
+                <h2><i class="fas fa-rocket"></i> 5. Shipping & Interstellar Delivery</h2>
+                <p>We offer worldwide shipping to most regions. Estimated delivery times are provided at checkout but are not guaranteed. VoidCart is not liable for delays caused by customs, carrier disruptions, or force majeure events (including but not limited to solar flares or supply chain anomalies). Title and risk of loss pass to you upon delivery to the carrier.</p>
+                <p>For digital products (e.g., NFT wearables, virtual items), delivery occurs electronically upon payment confirmation.</p>
+            </div>
+
+            <hr>
+
+            <!-- Returns, Refunds & Warranty -->
+            <div class="terms-section">
+                <h2><i class="fas fa-exchange-alt"></i> 6. Returns & Refunds</h2>
+                <p>Physical items in original condition may be returned within 14 days of delivery for a refund (excluding shipping costs). Return shipping fees are your responsibility unless the item is defective. To initiate a return, contact support@voidcart.space with your order ID.</p>
+                <p>Certain products marked as "Final Drop" or "Quantum Sale" are non-refundable. Defective items will be replaced or refunded at our discretion. VoidCart does not provide refunds for change of mind on limited-edition collectibles.</p>
+            </div>
+
+            <hr>
+
+            <!-- Intellectual Property -->
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> 7. Intellectual Property</h2>
+                <p>All content on VoidCart – including product designs, logos, graphics, images, copy, and the “VoidCart” name – is the exclusive property of VoidCart or its licensors and is protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written permission.</p>
+                <p>Purchasing a product does not grant you any rights to its underlying designs or trademarks.</p>
+            </div>
+
+            <hr>
+
+            <!-- Prohibited Conduct -->
+            <div class="terms-section">
+                <h2><i class="fas fa-ban"></i> 8. Prohibited Activities</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the Service for any illegal purpose or to violate any laws.</li>
+                    <li>Attempt to reverse engineer, scrape, or disrupt the website's functionality.</li>
+                    <li>Impersonate another person or entity.</li>
+                    <li>Post fake reviews, manipulate product ratings, or engage in fraudulent transactions.</li>
+                    <li>Resell VoidCart products without explicit authorization.</li>
+                </ul>
+                <p>Violation of these terms may result in immediate account termination and legal action where applicable.</p>
+            </div>
+
+            <hr>
+
+            <!-- Limitation of Liability & Disclaimer -->
+            <div class="terms-section">
+                <h2><i class="fas fa-shield-alt"></i> 9. Disclaimer & Limitation of Liability</h2>
+                <p>VoidCart provides the Service on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the site will be uninterrupted, error-free, or free of viruses.</p>
+                <p>To the fullest extent permitted by law, VoidCart shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the site or purchase of products, even if advised of the possibility of such damages. Our total liability shall not exceed the amount paid by you for the product giving rise to the claim.</p>
+                <div class="highlight-box">
+                    <p><i class="fas fa-balance-scale"></i> <strong>Governing Law:</strong> These Terms shall be governed by the laws of the State of Delaware, without regard to conflict of law principles. Any disputes arising under these Terms shall be resolved exclusively in the state or federal courts located in Delaware.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Termination & Miscellaneous -->
+            <div class="terms-section">
+                <h2><i class="fas fa-gavel"></i> 10. Termination & Modifications</h2>
+                <p>We reserve the right to suspend or terminate your access to the Service at any time for any reason, including breach of these Terms. Upon termination, your right to use the Service ceases immediately. Sections that by their nature should survive (e.g., intellectual property, limitation of liability) shall survive termination.</p>
+                <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect. Our failure to enforce any right or provision does not constitute a waiver of such right or provision.</p>
+            </div>
+
+            <hr>
+
+            <!-- Contact Information -->
+            <div class="terms-section">
+                <h2><i class="fas fa-envelope"></i> 11. Contact Us</h2>
+                <p>If you have any questions about these Terms, please reach out to our legal team:</p>
+                <p><i class="fas fa-paper-plane"></i> Email: legal@voidcart.space<br>
+                <i class="fas fa-map-marker-alt"></i> VoidCart HQ, 221B Nebula Avenue, Wilmington, DE 19801, United States<br>
+                <i class="fas fa-headset"></i> Customer Support: support@voidcart.space</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#" class="back-home" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Return to VoidCart Home</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>VOIDCART</h4>
+                <p>Hyperdimensional ecommerce</p>
+                <div class="socials">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-discord"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                
+        </div>
+        <div class="copyright">
+            © 2026 VoidCart — Where uniqueness shapes reality. All warp drives reserved. | <i class="fas fa-code-branch"></i> Quantum Legal Framework
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple interactivity: cart placeholder, back to home link
+    const cartSpan = document.querySelector('.cart-icon span');
+    if(cartSpan) {
+        // Demo cart count from homepage feel
+        let cartCount = 0;
+        cartSpan.innerText = cartCount;
+        // Optional: clicks on cart icon alert for demo
+        const cartIconDiv = document.querySelector('.cart-icon');
+        if(cartIconDiv) {
+            cartIconDiv.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("🛸 Your VoidCart is empty — explore our stellar collection on the homepage!");
+            });
+        }
+    }
+
+    // back to home button: simulate navigation (if hosted on same origin). Just for demo, redirect to "#" but we can show a message and link to homepage.
+    const backBtn = document.getElementById('backToHomeBtn');
+    if(backBtn) {
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // In a real scenario, you'd replace with actual index page link.
+            // For this demo, we display a floating notification and mention the homepage.
+            const msgDiv = document.createElement('div');
+            msgDiv.innerText = "✨ Redirecting to VoidCart Main Hub (Homepage) ✨";
+            msgDiv.style.position = 'fixed';
+            msgDiv.style.bottom = '30px';
+            msgDiv.style.left = '50%';
+            msgDiv.style.transform = 'translateX(-50%)';
+            msgDiv.style.background = '#1ad2c6';
+            msgDiv.style.color = '#0a0c1a';
+            msgDiv.style.padding = '12px 28px';
+            msgDiv.style.borderRadius = '60px';
+            msgDiv.style.fontWeight = 'bold';
+            msgDiv.style.zIndex = '1000';
+            msgDiv.style.fontFamily = "'Space Grotesk', monospace";
+            document.body.appendChild(msgDiv);
+            setTimeout(() => {
+                msgDiv.style.opacity = '0';
+                setTimeout(() => msgDiv.remove(), 500);
+                window.location.href = ".";   // redirect to same directory (homepage)
+            }, 1500);
+        });
+    }
+
+    // Small highlight effect on section headers for better UX
+    const allHeadings = document.querySelectorAll('.terms-section h2');
+    allHeadings.forEach(head => {
+        head.addEventListener('mouseenter', () => {
+            head.style.transition = '0.2s';
+            head.style.color = '#1ad2c6';
+        });
+        head.addEventListener('mouseleave', () => {
+            head.style.color = '#0a0c1a';
+        });
+    });
+</script>
+</body>
+</html>

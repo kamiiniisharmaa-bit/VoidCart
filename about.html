@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VoidCart | About Us – The Architects of Hyper-Commerce</title>
+    <!-- Google Fonts: consistent with unique brand identity -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #101214;
+            line-height: 1.55;
+        }
+
+        /* Brand color palette — unique identity */
+        :root {
+            --primary-dark: #0a0c1a;
+            --primary-teal: #1ad2c6;
+            --primary-deep: #1f2b5c;
+            --accent-glow: #ff6ac3;
+            --bg-soft: #f5f7ff;
+            --card-bg: #ffffff;
+            --gray-muted: #6c6f78;
+        }
+
+        h1, h2, h3, .logo, .nav-links a, .btn {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ========= HEADER (consistent across all pages) ========= */
+        header {
+            background: rgba(10, 12, 26, 0.96);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 210, 198, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #1ad2c6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.03em;
+        }
+        .logo span {
+            background: none;
+            color: #ff6ac3;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #eef2ff;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #1ad2c6;
+        }
+
+        .cart-icon {
+            background: #1f2b5c;
+            padding: 8px 14px;
+            border-radius: 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: white;
+        }
+
+        /* ========= ABOUT HERO ========= */
+        .about-hero {
+            background: linear-gradient(125deg, #0a0c1a 0%, #121a2e 100%);
+            padding: 70px 0 60px;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            margin-bottom: 50px;
+        }
+        .about-title {
+            text-align: center;
+            color: white;
+        }
+        .about-title h1 {
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .about-title p {
+            color: #cbd5ff;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .about-badge {
+            background: rgba(26, 210, 198, 0.15);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            margin-top: 24px;
+            color: #1ad2c6;
+        }
+
+        /* ===== STORY SECTION ===== */
+        .story-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 70px;
+            background: white;
+            border-radius: 40px;
+            padding: 20px 20px 20px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .story-text {
+            flex: 1.2;
+        }
+        .story-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0a0c1a;
+        }
+        .story-text p {
+            margin-bottom: 20px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .story-image {
+            flex: 0.9;
+            text-align: center;
+        }
+        .story-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+        }
+
+        /* Mission & Vision Cards */
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .mv-card {
+            flex: 1;
+            background: #f8faff;
+            padding: 36px 28px;
+            border-radius: 32px;
+            transition: all 0.2s;
+            border: 1px solid #eef2ff;
+        }
+        .mv-card:hover {
+            transform: translateY(-6px);
+            border-color: #1ad2c6;
+        }
+        .mv-card i {
+            font-size: 2.5rem;
+            color: #1ad2c6;
+            margin-bottom: 20px;
+        }
+        .mv-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 16px;
+        }
+        .mv-card p {
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* Values Section (unique brand pillars) */
+        .values-section {
+            background: #0a0c1a;
+            border-radius: 48px;
+            padding: 60px 40px;
+            margin: 50px 0;
+            color: white;
+            text-align: center;
+        }
+        .values-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .value-item {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(4px);
+            padding: 28px 20px;
+            border-radius: 28px;
+            flex: 1;
+            min-width: 180px;
+            transition: 0.2s;
+        }
+        .value-item i {
+            font-size: 2rem;
+            color: #1ad2c6;
+            margin-bottom: 15px;
+        }
+        .value-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .value-item p {
+            font-size: 0.9rem;
+            color: #cbd5ff;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin: 70px 0 50px;
+        }
+        .team-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .team-member {
+            background: white;
+            border-radius: 36px;
+            padding: 28px 22px;
+            text-align: center;
+            width: 240px;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+            transition: 0.2s;
+            border: 1px solid #edf2f7;
+        }
+        .team-member:hover {
+            transform: scale(1.02);
+            border-color: #1ad2c6;
+        }
+        .team-member img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 18px;
+            border: 3px solid #1ad2c6;
+        }
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            color: #1ad2c6;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .team-member small {
+            color: #6c6f78;
+            font-size: 0.8rem;
+        }
+
+        /* CTA Section */
+        .cta-about {
+            background: linear-gradient(115deg, #f0f3fe, #ffffff);
+            border-radius: 48px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 50px 0 70px;
+        }
+        .cta-about h3 {
+            font-size: 1.9rem;
+            margin-bottom: 12px;
+        }
+        .cta-about .btn-primary {
+            background: #0a0c1a;
+            color: white;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: #1ad2c6;
+            color: #0a0c1a;
+        }
+
+        /* footer */
+        footer {
+            background: #0b0e1a;
+            color: #bbb;
+            padding: 48px 0 32px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .footer-col p, .footer-col a {
+            color: #9ba3cf;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .socials i {
+            font-size: 1.6rem;
+            margin-right: 16px;
+            color: #1ad2c6;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #1f2542;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .story-grid { flex-direction: column; padding: 30px; }
+            .about-title h1 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .values-section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">VOID<span>CART</span> ⚡</div>
+            <ul class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span>0</span></a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="about-hero">
+        <div class="container about-title">
+            <h1>✨ We Are VoidCart ✨</h1>
+            <p>Pioneers of hyper-dimensional commerce, blending futuristic design with human-centered values.</p>
+            <div class="about-badge"><i class="fas fa-rocket"></i> Founded 2024 • Cosmic Collective</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Origin Story with unique image -->
+        <div class="story-grid">
+            <div class="story-text">
+                <h2><i class="fas fa-glasses"></i> The Origin Code</h2>
+                <p>VoidCart was born from a simple yet audacious belief: shopping should feel like discovery, not a chore. Tired of mundane marketplaces, a team of designers, engineers, and futurists came together to build a platform where product encounters feel like unlocking new dimensions.</p>
+                <p>What started as a small workshop creating limited-edition cyberwear has evolved into a global hub for forward-thinkers, collectors, and style rebels. We fuse AI-driven curation with sustainable practices, delivering artifacts that blend form, function, and fantasy.</p>
+                <p>Today, VoidCart serves over 50,000 cosmic citizens across 40+ countries — and we’re just getting started.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://picsum.photos/id/91/500/550" alt="VoidCart creative studio team brainstorming">
+            </div>
+        </div>
+
+        <!-- Mission & Vision Cards -->
+        <div class="mission-vision">
+            <div class="mv-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Our Mission</h3>
+                <p>To democratize access to extraordinary products by merging art, technology, and ethical commerce — empowering dreamers to express their unique identity.</p>
+            </div>
+            <div class="mv-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Our Vision</h3>
+                <p>Build the most immersive, trustworthy, and inclusive ecos for the next generation — where every click ignites wonder and every package delivers a story.</p>
+            </div>
+        </div>
+
+        <!-- Unique Values Section (Brand Pillars) -->
+        <div class="values-section">
+            <h2>⚡ The VoidCart Pillars ⚡</h2>
+            <p style="max-width: 600px; margin: 0 auto; color:#cbd5ff;">Four principles that orbit everything we do.</p>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-cube"></i>
+                    <h4>Radical Originality</h4>
+                    <p>No clones, no boring templates. Every design tells a fresh story.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h4>Transparent Trust</h4>
+                    <p>Your data is yours. Radical honesty in pricing, sourcing, and support.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Eco-Conscious Orbit</h4>
+                    <p>Carbon-neutral shipping, recycled packaging, and ethical partners.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Community First</h4>
+                    <p>We build with our customers, not just for them. Feedback loops fuel us.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section with unique faces images -->
+        <div class="team-section">
+            <h2><i class="fas fa-user-astronaut"></i> Meet the Architects</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Founder portrait">
+                    <h4>Morgan Kaelen</h4>
+                    <p>CEO & Creative Director</p>
+                    <small>Ex-NASA designer, futurist.</small>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CTO portrait">
+                    <h4>Jay V. Orion</h4>
+                    <p>Chief Tech Officer</p>
+                    <small>Blockchain + AI alchemist.</small>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Head of product">
+                    <h4>Lei Chen</h4>
+                    <p>Head of Product</p>
+                    <small>User experience visionary.</small>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Community lead">
+                    <h4>Samir Rivers</h4>
+                    <p>Community & Culture</p>
+                    <small>Building the VoidCart tribe.</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA to explore products -->
+        <div class="cta-about">
+            <h3>Become part of the VoidCart constellation</h3>
+            <p>Explore our hand-crafted products and join a movement that values uniqueness, quality, and connection.</p>
+            <a href="#" class="btn-primary" id="shopNowBtn">✨ Discover the Collection <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>VOIDCART</h4>
+                <p>Hyperdimensional ecommerce</p>
+                <div class="socials">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-discord"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                
+        </div>
+        <div class="copyright">
+            © 2026 VoidCart — Where uniqueness shapes reality. Built with <i class="fas fa-heart" style="color:#ff6ac3;"></i> by cosmic rebels.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Cart placeholder interaction (consistent with brand)
+    const cartSpan = document.querySelector('.cart-icon span');
+    if(cartSpan) {
+        let cartCount = 0;
+        cartSpan.innerText = cartCount;
+        const cartIconDiv = document.querySelector('.cart-icon');
+        if(cartIconDiv) {
+            cartIconDiv.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("🛸 Your VoidCart is awaiting artifacts — browse our collection on the homepage!");
+            });
+        }
+    }
+
+    // Shop Now button: redirect to homepage (or simulate)
+    const shopBtn = document.getElementById('shopNowBtn');
+    if(shopBtn) {
+        shopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const toast = document.createElement('div');
+            toast.innerText = "🚀 Launching to our stellar collection...";
+            toast.style.position = 'fixed';
+            toast.style.bottom = '30px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = '#1ad2c6';
+            toast.style.color = '#0a0c1a';
+            toast.style.padding = '12px 28px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = 'bold';
+            toast.style.fontFamily = "'Space Grotesk', monospace";
+            toast.style.zIndex = '1000';
+            toast.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 400);
+                window.location.href = "."; // redirect to homepage
+            }, 1200);
+        });
+    }
+
+    // add micro-interactions to mission cards
+    const cards = document.querySelectorAll('.mv-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.borderColor = '#ff6ac3';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.borderColor = '#eef2ff';
+        });
+    });
+
+    // subtle floating effect for value items
+    const values = document.querySelectorAll('.value-item');
+    values.forEach(val => {
+        val.addEventListener('mouseenter', () => {
+            val.style.transform = 'translateY(-5px)';
+            val.style.transition = '0.2s';
+        });
+        val.addEventListener('mouseleave', () => {
+            val.style.transform = 'translateY(0px)';
+        });
+    });
+</script>
+</body>
+</html>
